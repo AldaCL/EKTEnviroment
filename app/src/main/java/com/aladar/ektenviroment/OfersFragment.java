@@ -16,15 +16,17 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+
+
 import java.util.List;
 
 import static android.widget.Toast.makeText;
 
-//import static com.aladar.ektenviroment.RetrofitClient.getRetrofitInstance;
+import static com.aladar.ektenviroment.RetrofitClient.getRetrofitInstance;
 
 public class OfersFragment extends Fragment {
 
-    public  MyAdapter myAdapter;
+    public MyAdapter myAdapter;
     public RecyclerView myRecyclerView;
     View view;
     GetData service;
@@ -35,36 +37,42 @@ public class OfersFragment extends Fragment {
         //return super.onCreateView(inflater, container, savedInstanceState);
         //return inflater.inflate(R.layout.fragment_ofers,container,false);
 
-        view =  inflater.inflate(R.layout.fragment_ofers,container,false);
-
+        view = inflater.inflate(R.layout.fragment_ofers, container, false);
 
         GetData service = RetrofitClient.getRetrofitInstance().create(GetData.class);
 
         Call<List<RetroUsers>> call = service.getAllUsers();
 
         call.enqueue(new Callback<List<RetroUsers>>() {
-            @Override
-            public void onResponse(Call<List<RetroUsers>> call, Response<List<RetroUsers>> response) {
-                loadDataList(response.body());
-            }
+                         @Override
+                         public void onResponse(Call<List<RetroUsers>> call, Response<List<RetroUsers>> response) {
+                             loadDataList(response.body());
+                         }
 
-            @Override
-            public void onFailure(Call<List<RetroUsers>> call, Throwable t) {
-                Toast.makeText(getContext(),"No furulo",Toast.LENGTH_SHORT).show();
+                         @Override
+                         public void onFailure(Call<List<RetroUsers>> call, Throwable t) {
+                             Toast.makeText(getContext(), "No furulo", Toast.LENGTH_SHORT).show();
 
-            }
-        });
+                         }
 
 
-        return  view;
+                     }
+
+
+        );
+
+
+        return view;
+
 
     }
 
-    private void loadDataList(List<RetroUsers> usersList) {
+
+    public void loadDataList(List<RetroUsers> usersList) {
 
 //Get a reference to the RecyclerView//
 
-        myRecyclerView = view.findViewById(R.id.myRecyclerview);
+        myRecyclerView = view.findViewById(R.id.myRecyclerView);
         myAdapter = new MyAdapter(usersList);
 
 //Use a LinearLayoutManager with default vertical orientation//
@@ -76,5 +84,5 @@ public class OfersFragment extends Fragment {
 
         myRecyclerView.setAdapter(myAdapter);
     }
-
 }
+
