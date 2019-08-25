@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/nav_scan"
+        android:icon="@drawable/ic_linked_camera_black_24dp"
+        android:title="SCAN"
+        ></item>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        android:title="PERFIL">
+    </item>
+
+    <item
+        android:id="@+id/nav_ofertas"
+        android:icon="@drawable/ic_whatshot_black_24dp"
+        android:title="Ofertas">
+
+    </item>
+</menu>

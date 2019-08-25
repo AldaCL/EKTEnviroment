@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    >
+
+
+    <Button
+        android:id="@+id/ScanBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-310dp"
+        android:layout_marginBottom="46dp"
+        android:text="Escanear Producto"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:theme="@style/RaisedBTN"
+        />
+
+
+    <TextView
+        android:id="@+id/urlRES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ScanBTN"
+        android:layout_alignRight="@+id/ScanBTN"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
+        android:layout_marginBottom="136dp"
+        android:text="@string/numer1" />
+
+
+</RelativeLayout>
